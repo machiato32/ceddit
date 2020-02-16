@@ -1,42 +1,38 @@
 import 'package:flutter/material.dart';
 import 'post_preview.dart';
+import 'user.dart';
+import 'group.dart';
+import 'post.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MainRoute());
 
-class SizeConfig {
-  static MediaQueryData _mediaQueryData;
-  static double screenWidth;
-  static double screenHeight;
-  static double blockSizeHorizontal;
-  static double blockSizeVertical;
-
-  void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData.size.width;
-    screenHeight = _mediaQueryData.size.height;
-    blockSizeHorizontal = screenWidth / 100;
-    blockSizeVertical = screenHeight / 100;
-  }
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MainRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Color primary = Color.fromARGB(255, 37, 42, 81);
+    Color secondary = Color.fromARGB(255, 226, 178, 49);
+    Color primaryVariant = Color.fromARGB(255, 80, 82, 126);
+    Color onSurface = Colors.grey[600];
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primaryColor: Color.fromARGB(255, 21, 35, 66),
-        accentColor: Colors.white,
+        primaryColor: primary,
+        accentColor: secondary,
+        colorScheme: ColorScheme.light(
+          primary: primary,
+          secondary: secondary,
+          background: Colors.white,
+          surface: Colors.grey[100],
+          onSurface: onSurface,
+          primaryVariant: primaryVariant
+        ),
+        textTheme: TextTheme(
+          title: TextStyle(color: primaryVariant, fontSize: 25, ),
+          subtitle: TextStyle(color: onSurface, fontSize: 15,),
+          body2: TextStyle(color: onSurface, fontSize: 20, ),
+          caption: TextStyle(color: onSurface, fontSize: 13,),
+          headline: TextStyle(color: primary, fontSize: 20, fontWeight: FontWeight.bold),
+        )
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -45,15 +41,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -65,50 +52,84 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    SizeConfig().init(context);
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(63),
-        child: Container(
-          padding: EdgeInsets.only(top: 3),
-          child: AppBar(
-            centerTitle: false,
-            title: Row(
-              children: <Widget>[
-                Image.asset('assets/EClogo.png'),
-                SizedBox(width: SizeConfig.blockSizeHorizontal,),
-                Text('Ceddit')
-              ],
-            ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Row(
+          children: <Widget>[
 
-          ),
+            Container(
+              width: 50,
+              child: Image.asset('assets/EClogo.png')),
+            SizedBox(width: 10,),
+            Text('Eötvös Collegium')
+          ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(bottom: 0, left: SizeConfig.blockSizeHorizontal*2, right: SizeConfig.blockSizeHorizontal*2, top: 0),
-        child: Center(
-
-            child: ListView(
-
-              children: <Widget>[
-                PostPreview(),
-                PostPreview(),
-                PostPreview(),
-                PostPreview(),
-                PostPreview(),
-                PostPreview(),
-                PostPreview(),
-
-              ],
+      drawer: Drawer(
+        elevation: 16,
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/ec_test.jpg'), fit: BoxFit.fill)
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle, color: Theme.of(context).colorScheme.secondary,),
+              title: Text('Felhasználó', style: Theme.of(context).textTheme.headline,),
+              onTap: (){},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.print, color: Theme.of(context).colorScheme.secondary,),
+              title: Text('Nyomtatás', style: Theme.of(context).textTheme.headline,),
+              onTap: (){},
+            ),
+            ListTile(
+              leading: Icon(Icons.wifi, color: Theme.of(context).colorScheme.secondary,),
+              title: Text('Internet', style: Theme.of(context).textTheme.headline,),
+              onTap: (){},
+            ),
+            ListTile(
+              leading: Icon(Icons.local_library, color: Theme.of(context).colorScheme.secondary,),
+              title: Text('Terembeosztás', style: Theme.of(context).textTheme.headline,),
+              onTap: (){},
+              enabled: false,
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.bug_report, color: Colors.red,),
+              title: Text('Probléma jelentése', style: Theme.of(context).textTheme.headline,),
+              onTap: (){},
+              enabled: false,
             )
+          ],
         ),
+      ),
+      body: Center(
+
+          child: ListView( 
+            padding: EdgeInsets.all(4),
+            children:
+            <Widget>[
+              InkWell(
+                child: PostPreview('Gyertek szinhazba!',
+                      'Szinhazasdi',
+                      DateTime(2020),
+                      User('Samu'),
+                      Group('EC/KultBiz')),
+                onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) => PostRoute()));},
+              ),
+              PostPreview.empty(),
+              PostPreview.empty(),
+              PostPreview.empty(),
+              PostPreview.empty(),
+              PostPreview.empty(),
+              PostPreview.empty(),
+
+            ],
+          )
       )
     );
   }
