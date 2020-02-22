@@ -3,6 +3,7 @@ import 'post_preview.dart';
 import 'user.dart';
 import 'group.dart';
 import 'post.dart';
+import 'internet.dart';
 
 void main() => runApp(MainRoute());
 
@@ -27,8 +28,8 @@ class MainRoute extends StatelessWidget {
           primaryVariant: primaryVariant
         ),
         textTheme: TextTheme(
-          title: TextStyle(color: primaryVariant, fontSize: 25, ),
-          subtitle: TextStyle(color: onSurface, fontSize: 15,),
+          title: TextStyle(color: primaryVariant, fontSize: 25, fontWeight: FontWeight.bold),
+          subtitle: TextStyle(color: onSurface, fontSize: 16,),
           body2: TextStyle(color: onSurface, fontSize: 20, ),
           caption: TextStyle(color: onSurface, fontSize: 13,),
           headline: TextStyle(color: primary, fontSize: 20, fontWeight: FontWeight.bold),
@@ -71,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
+              child: Container(),
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage('assets/ec_test.jpg'), fit: BoxFit.fill)
               ),
@@ -89,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.wifi, color: Theme.of(context).colorScheme.secondary,),
               title: Text('Internet', style: Theme.of(context).textTheme.headline,),
-              onTap: (){},
+              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => Internet()));},
             ),
             ListTile(
               leading: Icon(Icons.local_library, color: Theme.of(context).colorScheme.secondary,),

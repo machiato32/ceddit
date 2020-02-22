@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
 import 'user.dart';
 import 'group.dart';
 import 'package:http/http.dart' as http;
@@ -41,8 +40,7 @@ class PostPreview extends StatelessWidget {
 
     return Card(
       color: Theme.of(context).colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
-
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
       elevation: 1,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
