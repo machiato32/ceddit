@@ -39,9 +39,9 @@ class _RegisteredDevicesState extends State<RegisteredDevices> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
-      elevation: 1,
+//      color: Theme.of(context).colorScheme.surface,
+//      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
+//      elevation: 1,
       child: Padding(
         padding: EdgeInsets.all(15),
         child: Column(
@@ -97,22 +97,25 @@ class _RegisteredDevicesState extends State<RegisteredDevices> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        DataTable(
-                          columns: [
-                            DataColumn(label: Text('MAC-cím', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.secondary),)),
-                            DataColumn(label: Text('Megjegyzés', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.secondary),)),
-                            DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.secondary),))
-                          ],
-                          rows: [
-                            DataRow(
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: DataTable(
+                            columns: [
+                              DataColumn(label: Text('MAC-cím', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),)),
+                              DataColumn(label: Text('Megjegyzés', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),)),
+                              DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),))
+                            ],
+                            rows: [
+                              DataRow(
 
-                              cells: [
-                                DataCell(Text('3C:18:A0:99:EC:86', style: Theme.of(context).textTheme.subtitle)),
-                                DataCell(Text('Migrated from Uran 1.1', style: Theme.of(context).textTheme.subtitle)),
-                                DataCell(Text('Elfogadott', style: Theme.of(context).textTheme.subtitle))
-                              ],
-                            )
-                          ]
+                                cells: [
+                                  DataCell(Text('3C:18:A0:99:EC:86', style: Theme.of(context).textTheme.subtitle)),
+                                  DataCell(Text('Migrated from Uran 1.1', style: Theme.of(context).textTheme.subtitle)),
+                                  DataCell(Text('Elfogadott', style: Theme.of(context).textTheme.subtitle))
+                                ],
+                              )
+                            ]
+                          ),
                         ),
                         SizedBox(height: 10,),
                         FlatButton(
@@ -146,9 +149,9 @@ class _WifiPassState extends State<WifiPass> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
-      elevation: 1,
+//      color: Theme.of(context).colorScheme.surface,
+//      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
+//      elevation: 1,
       child: Padding(
         padding: EdgeInsets.all(15),
         child: Column(
@@ -226,9 +229,6 @@ class _InternetAccessState extends State<InternetAccess> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
-      elevation: 1,
       child: Padding(
         padding: EdgeInsets.all(15),
         child: Column(
