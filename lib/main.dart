@@ -14,8 +14,10 @@ class MainRoute extends StatelessWidget {
     Color primary = Color.fromARGB(255, 37, 42, 81);
     Color secondary = Color.fromARGB(255, 226, 178, 49);
     Color primaryVariant = Color.fromARGB(255, 80, 82, 126);
-    Color onSurface = Colors.grey[600];
-    Color surface = Colors.grey[50];
+//    Color primary = Colors.red;
+//    Color secondary = Colors.redAccent;
+    Color onSurface = Colors.grey[500];
+    Color surface = Colors.white;
     return MaterialApp(
       title: 'Urán',
       theme: ThemeData(
@@ -24,35 +26,59 @@ class MainRoute extends StatelessWidget {
         colorScheme: ColorScheme.light(
             primary: primary,
             secondary: secondary,
-            background: Colors.white,
+            background: Colors.grey[100],
             surface: surface,
             onSurface: onSurface,
-            primaryVariant: primaryVariant),
+//            primaryVariant: primaryVariant
+        ),
         textTheme: TextTheme(
           title: TextStyle(
-              color: primaryVariant, fontSize: 25, fontWeight: FontWeight.bold),
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+            color: primary,
+            letterSpacing: 0,
+          ),
           subtitle: TextStyle(
+            fontSize: 23,
+            fontWeight: FontWeight.w300,
+            letterSpacing: 0,
+          ),
+          body1: TextStyle(
             color: onSurface,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0.5,
             fontSize: 16,
           ),
-          body2: TextStyle(
+          overline: TextStyle(
             color: onSurface,
-            fontSize: 20,
+            fontSize: 10,
+            letterSpacing: 1.5
           ),
-          caption: TextStyle(
-            color: onSurface,
-            fontSize: 13,
-          ),
-          headline: TextStyle(
-              color: primary, fontSize: 20, fontWeight: FontWeight.bold),
+//          headline: TextStyle(
+//            color: primaryVariant,
+//            fontSize: 20,
+//            fontWeight: FontWeight.normal,
+//            letterSpacing: 0.15
+//          ),
+          button: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 1.25,
+          )
         ),
         cardTheme: CardTheme(
           color: surface,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
-              side: BorderSide(color: secondary)),
+          shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(3),
+          ),
+//          margin: EdgeInsets.fromLTRB(10, 10, 10, 15),
           elevation: 1,
         ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Theme.of(context).colorScheme.secondary,
+        ),
+        buttonColor: secondary,
       ),
       home: MyHomePage(title: ''),
     );
@@ -76,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
           centerTitle: true,
           title: Text(
             'URÁN',
-            style: TextStyle(letterSpacing: 3, fontSize: 25),
+            style: TextStyle(letterSpacing: 0.25, fontSize: 24),
           ),
         ),
         drawer: Drawer(
@@ -94,11 +120,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.account_circle,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 title: Text(
                   'Felhasználó',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () {},
               ),
@@ -106,11 +132,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.print,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 title: Text(
                   'Nyomtatás',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -120,11 +146,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.wifi,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 title: Text(
                   'Internet',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -134,11 +160,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.local_library,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 title: Text(
                   'Terembeosztás',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () {},
                 enabled: false,
@@ -151,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 title: Text(
                   'Probléma jelentése',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.body1.copyWith(color: Colors.red, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {},
                 enabled: false,
@@ -164,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.all(4),
           children: <Widget>[
             InkWell(
-              child: PostPreview('Gyertek szinhazba!', 'Szinhazasdi',
+              child: PostPreview('Gyertek szinházba!', 'Szinházasdi',
                   DateTime(2020), User('Samu'), Group('EC/KultBiz')),
               onTap: () {
                 Navigator.push(context,

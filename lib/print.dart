@@ -47,18 +47,18 @@ class _PrintHistoryState extends State<PrintHistory> {
               scrollDirection: Axis.horizontal,
               child: DataTable(
                 columns: [
-                  DataColumn(label: Text('Létrehozva', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),)),
-                  DataColumn(label: Text('Dokumentum', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),)),
-                  DataColumn(label: Text('Költség', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),)),
-                  DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,),))
+                  DataColumn(label: Text('Létrehozva', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Dokumentum', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Költség', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
                 ],
                 rows: [
                   DataRow(
                     cells: [
-                      DataCell(Text('2020.01.12. 19:00', style: Theme.of(context).textTheme.subtitle)),
-                      DataCell(Text('sajt.pdf', style: Theme.of(context).textTheme.subtitle)),
-                      DataCell(Text('200 HUF', style: Theme.of(context).textTheme.subtitle)),
-                      DataCell(Text('Elfogadva', style: Theme.of(context).textTheme.subtitle)),
+                      DataCell(Text('2020.01.12. 19:00', style: Theme.of(context).textTheme.body1)),
+                      DataCell(Text('sajt.pdf', style: Theme.of(context).textTheme.body1)),
+                      DataCell(Text('200 HUF', style: Theme.of(context).textTheme.body1)),
+                      DataCell(Text('Elfogadva', style: Theme.of(context).textTheme.body1)),
                     ]
                   )
                 ],
@@ -96,8 +96,8 @@ class _PrintDocumentState extends State<PrintDocument> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Rendelkezésre álló összeg: 0 HUF', style: Theme.of(context).textTheme.subtitle,),
-                  Text('Ezen felül ingyenesen nyomtatható 0 oldal', style: Theme.of(context).textTheme.subtitle,)
+                  Text('Rendelkezésre álló összeg: 0 HUF', style: Theme.of(context).textTheme.body1,),
+                  Text('Ezen felül ingyenesen nyomtatható 0 oldal', style: Theme.of(context).textTheme.body1,)
                 ],
               ),
             ),
@@ -107,23 +107,23 @@ class _PrintDocumentState extends State<PrintDocument> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Csak .pdf fájl nyomtatható.', style: Theme.of(context).textTheme.subtitle,),
+                  Text('Csak .pdf fájl nyomtatható.', style: Theme.of(context).textTheme.body1,),
                   FlatButton(
-                    child: Text('Dokumentum választása', style: Theme.of(context).textTheme.subtitle.copyWith(color: Colors.white),),
-                    color: Theme.of(context).colorScheme.primaryVariant,
+                    child: Text('DOKUMENTUM NYOMTATÁSA', style: Theme.of(context).textTheme.button,),
+                    color: Theme.of(context).buttonColor,
                     onPressed: (){},
                   ),
                   SizedBox(height: 5,),
-                  Text('Példányszám', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold),),
+                  Text('Példányszám', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
-                    style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18),
+                    style: Theme.of(context).textTheme.body1.copyWith(fontSize: 18),
                     keyboardType: TextInputType.number,
                   ),
                   SizedBox(height: 5,),
                   SwitchListTile(
                     value: _twoSided,
-                    title: Text('Kétoldalas nyomtatás', style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 18, fontWeight: FontWeight.bold,)),
-                    activeColor: Theme.of(context).colorScheme.primaryVariant,
+                    title: Text('Kétoldalas nyomtatás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
+                    activeColor: Theme.of(context).colorScheme.secondary,
                     onChanged: (bool newValue){
                       setState(() {
                         _twoSided=newValue;
@@ -131,8 +131,8 @@ class _PrintDocumentState extends State<PrintDocument> {
                     },
                   ),
                   FlatButton(
-                    child: Text('Nyomtatás', style: Theme.of(context).textTheme.subtitle.copyWith(color: Colors.white),),
-                    color: Theme.of(context).colorScheme.primaryVariant,
+                    child: Text('NYOMTATÁS', style: Theme.of(context).textTheme.button,),
+                    color: Theme.of(context).buttonColor,
                     onPressed: (){},
                   ),
                 ],

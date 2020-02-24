@@ -43,9 +43,6 @@ class PostPreview extends StatelessWidget {
     }
 
     return Card(
-//      color: Theme.of(context).colorScheme.surface,
-//      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: BorderSide(color: Theme.of(context).colorScheme.secondary)),
-//      elevation: 1,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -63,8 +60,8 @@ class PostPreview extends StatelessWidget {
                   width: 5,
                 ),
                 Text(
-                  group.name + ' - ' + timeFromNow,
-                  style: Theme.of(context).textTheme.caption,
+                  group.name.toUpperCase() + ' - ' + timeFromNow.toUpperCase(),
+                  style: Theme.of(context).textTheme.overline,
                 )
               ],
             ),
@@ -80,7 +77,7 @@ class PostPreview extends StatelessWidget {
               padding: const EdgeInsets.only(left: 4, right: 4),
               child: Text(
                 post,
-                style: Theme.of(context).textTheme.subtitle,
+                style: Theme.of(context).textTheme.body1,
               ),
             ),
           ],
