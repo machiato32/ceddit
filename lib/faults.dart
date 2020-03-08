@@ -51,13 +51,13 @@ class _ReportFaultState extends State<ReportFault> {
                 children: <Widget>[
                   Text('Amennyiben valamilyen hibát találsz a Collegium épületében (pl. hiányzó villanykörte), itt be tudod jelenteni, hogy a karbantartó mihamarabb megjavítsa.'),
                   Divider(),
-                  Text('Helyszín', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary, fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('Helyszín', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant, fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
                     style: Theme.of(context).textTheme.body1.copyWith(fontSize: 18),
 
                   ),
                   SizedBox(height: 10,),
-                  Text('Leírás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary, fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('Leírás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant, fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
                     style: Theme.of(context).textTheme.body1.copyWith(fontSize: 18),
 
@@ -99,10 +99,10 @@ class _FaultHistoryState extends State<FaultHistory> {
               child: DataTable(
 
                 columns: [
-                  DataColumn(label: Text('Létrehozva', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Helyszín', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Leírás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
+                  DataColumn(label: Text('Létrehozva', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Helyszín', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Leírás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
                 ],
                 rows: [
                   DataRow(

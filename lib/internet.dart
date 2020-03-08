@@ -59,9 +59,9 @@ class _RegisteredDevicesState extends State<RegisteredDevices> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('MAC-cím', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('MAC-cím', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
-                    style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: 0.2),
+                    style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: 0.2),
                     decoration: InputDecoration(
                       hintText: '00:00:00:00:00:00'
                     ),
@@ -70,9 +70,9 @@ class _RegisteredDevicesState extends State<RegisteredDevices> {
                     ]
                   ),
                   SizedBox(height: 10,),
-                  Text('Megjegyzés', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('Megjegyzés', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
-                      style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: 0.2),
+                      style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: 0.2),
                   ),
                   SizedBox(height: 10,),
                   FlatButton(
@@ -101,9 +101,9 @@ class _RegisteredDevicesState extends State<RegisteredDevices> {
                           scrollDirection: Axis.horizontal,
                           child: DataTable(
                             columns: [
-                              DataColumn(label: Text('MAC-cím', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                              DataColumn(label: Text('Megjegyzés', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                              DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
+                              DataColumn(label: Text('MAC-cím', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                              DataColumn(label: Text('Megjegyzés', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                              DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
                             ],
                             rows: [
                               DataRow(
@@ -166,11 +166,11 @@ class _WifiPassState extends State<WifiPass> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Felhasználónév: xyz', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('Felhasználónév: xyz', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children:<Widget>[
-                      Text('Jelszó: ', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary, fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
+                      Text('Jelszó: ', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant, fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
                       SizedBox(width: 10,),
                       FlatButton(
                         child: Text('MUTASD', style: Theme.of(context).textTheme.button,),

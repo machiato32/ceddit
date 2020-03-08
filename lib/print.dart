@@ -72,7 +72,7 @@ class _PrintDocumentState extends State<PrintDocument> {
                     onPressed: (){},
                   ),
                   SizedBox(height: 5,),
-                  Text('Példányszám', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('Példányszám', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
                     style: Theme.of(context).textTheme.body1.copyWith(fontSize: 18),
                     keyboardType: TextInputType.numberWithOptions(signed: false),
@@ -83,7 +83,7 @@ class _PrintDocumentState extends State<PrintDocument> {
                   SizedBox(height: 5,),
                   SwitchListTile(
                     value: _twoSided,
-                    title: Text('Kétoldalas nyomtatás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
+                    title: Text('Kétoldalas nyomtatás', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
                     activeColor: Theme.of(context).colorScheme.secondary,
                     onChanged: (bool newValue){
                       setState(() {
@@ -93,7 +93,7 @@ class _PrintDocumentState extends State<PrintDocument> {
                   ),
                   SwitchListTile(
                     value: _twoSided,
-                    title: Text('Ingyenes oldalak használata', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
+                    title: Text('Ingyenes oldalak használata', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2)),
                     activeColor: Theme.of(context).colorScheme.secondary,
                     onChanged: (bool newValue){
                       setState(() {
@@ -141,10 +141,10 @@ class _FreePagesState extends State<FreePages> {
               scrollDirection: Axis.horizontal,
               child: DataTable(
                 columns: [
-                  DataColumn(label: Text('Ingyenes oldalak', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Felhasználható', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Utolsó módosító', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Megjegyzés', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
+                  DataColumn(label: Text('Ingyenes oldalak', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Felhasználható', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Utolsó módosító', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Megjegyzés', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
                 ],
                 rows: [
                   DataRow(
@@ -202,7 +202,7 @@ class _SendMoneyState extends State<SendMoney> {
                       );
                     }).toList()
                   ),
-                  Text('Összeg', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
+                  Text('Összeg', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),),
                   TextField(
                     style: Theme.of(context).textTheme.body1.copyWith(fontSize: 18),
                     keyboardType: TextInputType.numberWithOptions(signed: false),
@@ -247,10 +247,10 @@ class _PrintHistoryState extends State<PrintHistory> {
               scrollDirection: Axis.horizontal,
               child: DataTable(
                 columns: [
-                  DataColumn(label: Text('Létrehozva', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Dokumentum', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Költség', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
-                  DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primary,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
+                  DataColumn(label: Text('Létrehozva', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Dokumentum', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Költség', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),)),
+                  DataColumn(label: Text('Állapot', style: Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).colorScheme.primaryVariant,fontSize: 17, fontWeight: FontWeight.w800, letterSpacing: 0.2),))
                 ],
                 rows: [
                   DataRow(
