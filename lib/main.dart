@@ -5,6 +5,7 @@ import 'group.dart';
 import 'post.dart';
 import 'internet.dart';
 import 'print.dart';
+import 'faults.dart';
 
 void main() => runApp(MainRoute());
 
@@ -159,12 +160,26 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: Icon(
-                  Icons.local_library,
+                  Icons.build,
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
                 title: Text(
-                  'Terembeosztás',
+                  'Hibák',
                   style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Faults()));
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.local_library,
+                  color: Colors.grey[300],
+                ),
+                title: Text(
+                  'Terembeosztás',
+                  style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold, color: Colors.grey[300]),
                 ),
                 onTap: () {},
                 enabled: false,
