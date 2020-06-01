@@ -42,8 +42,9 @@ class _MainRouteState extends State<MainRoute> {
   Widget build(BuildContext context) {
     Color primary = Color.fromARGB(255, 37, 42, 81);
     Color secondary = Color.fromARGB(255, 226, 178, 49);
+    Color secondaryDark = Color.fromARGB(255, 223, 156, 40);
     Color primaryDark = Colors.white;
-//    Color primaryVariant = Color.fromARGB(255, 80, 82, 126);
+    Color primaryVariant = Color.fromARGB(255, 0, 0, 41);
 //    Color primary = Colors.red;
 //    Color secondary = Colors.redAccent;
     Color onSurface = Colors.grey[500];
@@ -61,10 +62,10 @@ class _MainRouteState extends State<MainRoute> {
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               primaryColor: primary,
-              accentColor: secondary,
+              accentColor: secondaryDark,
               colorScheme: ColorScheme.dark(
                 primary: primary,
-                secondary: secondary,
+                secondary: secondaryDark,
                 background: Colors.grey[100],
                 surface: surface,
                 onSurface: onSurface,
@@ -109,15 +110,15 @@ class _MainRouteState extends State<MainRoute> {
               ),
               cardTheme: CardTheme(
                 shape:RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3),
+                  borderRadius: BorderRadius.circular(5),
                 ),
 //          margin: EdgeInsets.fromLTRB(10, 10, 10, 15),
-                elevation: 1,
+                elevation: 5,
               ),
               buttonTheme: ButtonThemeData(
                 buttonColor: Theme.of(context).colorScheme.secondary,
               ),
-              buttonColor: secondary,
+              buttonColor: secondaryDark,
             ),
             theme: ThemeData(
               brightness: Brightness.light,
@@ -214,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
         drawer: Drawer(
           elevation: 16,
           child: ListView(
-            padding: const EdgeInsets.all(0.0),
+            padding: EdgeInsets.all(0),
             children: <Widget>[
               DrawerHeader(
                 child: SizedBox(height: 10),
